@@ -39,7 +39,12 @@ module.exports = {
     ],
     '@typescript-eslint/member-ordering': 'error',
     '@typescript-eslint/no-parameter-properties': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_',
+      }],
     '@typescript-eslint/prefer-for-of': 'error',
     'semi': 'off', // TS-Eslint handles it
     '@typescript-eslint/semi': ['error', 'never'],
@@ -88,6 +93,7 @@ module.exports = {
     'no-underscore-dangle': 'off', /* we want to activate this in the future */
     'no-unused-vars': 'off', // handled by typescript-eslint
     'object-shorthand': 'error',
+    'operator-linebreak': ['error', 'before'],
     'one-var': ['error', 'never'],
     'quote-props': ['error', 'consistent-as-needed'],
     'radix': 'error',
